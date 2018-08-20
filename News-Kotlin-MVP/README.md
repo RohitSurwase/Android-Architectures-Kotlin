@@ -12,7 +12,7 @@ Simple News app developed in Kotlin using MVP architecture. This app is develope
 
 It is so simple. Just clone the repository to your local machine and you are good to go.
 
-## Libraies Used
+## Libraries Used
 The best part is in this project we have not used any libraries except standard/required libraries.
 
 <!---

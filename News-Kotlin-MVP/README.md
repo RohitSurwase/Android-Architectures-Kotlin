@@ -23,7 +23,7 @@ Please read [CONTRIBUTING.md](url) for details on our code of conduct, and the p
 
 ## Authors & Contributers
 
-* [**Rohit Surwase**](https://github.com/RohitSurwase) - *Initial work* - [API-Calling-Flow](https://github.com/RohitSurwase/API-Calling-Flow) , [AndroidDesignPatterns](https://github.com/RohitSurwase/AndroidDesignPatterns) , [Linkaive - Android App on Play Store](https://play.google.com/store/apps/details?id=com.rohitss.saveme)
+* [**Rohit Surwase**](https://github.com/RohitSurwase)
 
 <!---
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
@@ -31,9 +31,4 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## License
 
-This project is licensed under the Apache License, Version 2.0 - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Used [androidmvp](https://github.com/antoniolg/androidmvp) by Antonio Leiva as a reference
-* Thanks Antonio Leiva Sir for your help.
+This project is licensed under the Apache License, Version 2.0 - see the [LICENSE](LICENSE.md) file for details

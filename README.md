@@ -1,4 +1,5 @@
-# Android-Architectures-Kotlin
+# Android App Architectures
+## Simple Examples using Kotlin
 Simple implementation examples of some popular app architecture patterns in Kotlin.
 
 ### Samples

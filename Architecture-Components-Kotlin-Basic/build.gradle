@@ -5,6 +5,7 @@ buildscript {
     ext.support_version='27.1.1'
     ext.roomVersion = '1.1.1'
     ext.archLifecycleVersion = '1.1.1'
+    ext.anko_version='0.10.5'
     repositories {
         google()
         jcenter()

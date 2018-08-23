@@ -11,4 +11,4 @@ These are the simple examples showing the implementation of few popular architec
 * ## Architecture Components in Kotlin
 **[Architecture-Components-Kotlin-Basic](https://github.com/RohitSurwase/Android-Architectures-Kotlin/blob/master/Architecture-Components-Kotlin-Basic)** - Simple News app developed in Kotlin using Android Architecture Components.
 
-* ## Architecture Components in Kotlin with advancements (recommendations)
+* ### Architecture Components in Kotlin with advancements (recommendations)

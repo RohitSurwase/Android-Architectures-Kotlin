@@ -1,39 +1,29 @@
 package com.rohitss.aac
 
-import android.arch.lifecycle.LiveData
-import android.content.Context
+import org.jetbrains.anko.doAsync
 
 /**
  * Created by Rohit Surwase on 07/08/18.
  */
-class AppsRepository(context: Context) {
-    private var databaseDAO: DatabaseDAO?
-    private var mAllArticles: LiveData<List<ArticlesItem>>?
-
-    init {
-        val appDatabase = AppDatabase.getInstance(context)
-        databaseDAO = appDatabase?.getDatabaseDAO()
-        mAllArticles = databaseDAO?.getAllNewsDAO()
-    }
+class AppsRepository private constructor(private val databaseDAO: ArticlesDAO) {
 
     companion object {
-        private val LOCK = Any()
-        private var sInstance: AppsRepository? = null
+        // For Singleton instantiation
+        @Volatile
+        private var instance: AppsRepository? = null
 
-        fun getInstance(context: Context): AppsRepository? {
-            if (sInstance == null) {
-                synchronized(LOCK) {
-                    if (sInstance == null) {
-                        sInstance = AppsRepository(context)
-                    }
-                }
-            }
-            return sInstance
+        fun getInstance(databaseDAO: ArticlesDAO) = instance
+                ?: synchronized(this) {
+            instance
+                    ?: AppsRepository(databaseDAO).also { instance = it }
         }
     }
 
+    fun getAllArticlesREPO() = databaseDAO.getAllArticlesDAO()
 
-    fun getAllArticlesRepo(): LiveData<List<ArticlesItem>>? {
-        return mAllArticles
+    fun insertArticleREPO(articlesItem: ArticlesItem) {
+        doAsync {
+
+        }
     }
 }

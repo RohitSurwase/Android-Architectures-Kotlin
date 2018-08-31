@@ -5,28 +5,22 @@ import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 
-
 /**
  * Created by Rohit Surwase on 07/08/18.
  */
-@Database(entities = [(ArticlesItem::class)], version = 1)
+@Database(entities = [ArticlesItem::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun getDatabaseDAO(): DatabaseDAO
+    abstract fun getArticlesDAO(): ArticlesDAO
 
     companion object {
         // For Singleton instantiation
-        private val LOCK = Any()
-        private var sInstance: AppDatabase? = null
-        fun getInstance(context: Context): AppDatabase? {
-            if (sInstance == null) {
-                synchronized(LOCK) {
-                    if (sInstance == null) {
-                        sInstance = Room.databaseBuilder(context.applicationContext,
-                                AppDatabase::class.java, "my_database.db").build()
-                    }
-                }
+        @Volatile private var instance: AppDatabase? = null
+
+        fun getInstance(context: Context): AppDatabase {
+            return instance ?: synchronized(this) {
+                instance ?: Room.databaseBuilder(context.applicationContext,
+                        AppDatabase::class.java, "my_database.db").fallbackToDestructiveMigration().build().also { instance = it }
             }
-            return sInstance
         }
     }
 }

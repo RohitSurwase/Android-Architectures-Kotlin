@@ -1,3 +1,5 @@
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 This repo is the part of the article series: [Android App Architectures in Kotlin](https://hackernoon.com/https-medium-com-rohitss-android-app-architectures-mvp-with-kotlin-f255b236010a)
 
 These are the simple examples showing the implementation of few popular architecture patterns using Kotlin.

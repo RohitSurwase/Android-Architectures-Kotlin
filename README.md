@@ -18,3 +18,12 @@ Stay tuned, work in progress...
 
 ### Architecture Components in Kotlin with advancements (recommendations)
 Stay tuned, work in progress...
+
+
+## Authors & Contributers
+
+* [**Rohit Surwase**](https://github.com/RohitSurwase) - *Initial work* - [UCE-Handler](https://github.com/RohitSurwase/UCE-Handler), [AndroidDesignPatterns](https://github.com/RohitSurwase/AndroidDesignPatterns),  [Linkaive - Android App](https://play.google.com/store/apps/details?id=com.rohitss.saveme)
+
+## License
+Copyright © 2018 Rohit Sahebrao Surwase.
+This project is licensed under the Apache License, Version 2.0 - see the [LICENSE.md](LICENSE.md) file for details

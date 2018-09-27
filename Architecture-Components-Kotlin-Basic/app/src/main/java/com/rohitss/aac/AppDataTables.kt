@@ -18,20 +18,18 @@
 
 package com.rohitss.aac
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.Index
+import android.arch.persistence.room.PrimaryKey
+import android.support.annotation.NonNull
 
 /**
- * Created by Rohit Surwase on 31/08/18.
+ * Created by Rohit Surwase on 07/08/18.
  */
-
-fun inflate(context: Context, viewId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(viewId, parent, attachToRoot)
-}
-
-fun showToast(context: Context, strError: String, length: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(context, strError, length).show()
-}
+@Entity(tableName = "articles_table", indices = [Index("title", unique = true)])
+data class ArticlesItem(
+        @PrimaryKey(autoGenerate = true) @NonNull var id: Int,
+        var author: String,
+        var description: String,
+        var title: String
+)

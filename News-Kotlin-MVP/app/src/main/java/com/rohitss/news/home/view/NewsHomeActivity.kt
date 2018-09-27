@@ -65,7 +65,7 @@ class NewsHomeActivity : AppCompatActivity(), NewsHomeView {
     }
 
     override fun onItemClick(adapterPosition: Int) {
-        showToast( this,"You clicked $adapterPosition")
+        showToast(this, "You clicked $adapterPosition")
     }
 
     override fun onDestroy() {

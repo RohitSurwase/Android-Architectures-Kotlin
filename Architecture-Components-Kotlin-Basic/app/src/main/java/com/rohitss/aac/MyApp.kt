@@ -18,20 +18,16 @@
 
 package com.rohitss.aac
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
+import android.app.Application
 
 /**
- * Created by Rohit Surwase on 31/08/18.
+ * Created by Rohit Surwase on 26/09/18.
  */
+class MyApp : Application() {
 
-fun inflate(context: Context, viewId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(viewId, parent, attachToRoot)
-}
+    private fun getDatabase() = AppDatabase.getInstance(this)
 
-fun showToast(context: Context, strError: String, length: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(context, strError, length).show()
+    private fun getArticlesDao() = getDatabase().getArticlesDAO()
+
+    fun getArticlesRepository() = ArticlesRepository.getInstance(getArticlesDao())
 }

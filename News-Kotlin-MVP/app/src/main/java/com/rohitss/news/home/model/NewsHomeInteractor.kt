@@ -53,9 +53,9 @@ class NewsHomeInteractor {
                          * This way we are reducing nullability
                          */
                         newsResponseNullable
-                                .articles?.filterNotNull()
+                                .articles?.asSequence()?.filterNotNull()
                                 ?.filterNot { TextUtils.isEmpty(it.author) || TextUtils.isEmpty(it.title) || TextUtils.isEmpty(it.description) }
-                                ?.map { ArticlesItem(it.author!!, it.description!!, it.title!!) }
+                                ?.map { ArticlesItem(it.author!!, it.description!!, it.title!!) }?.toList()
                                 ?.forEach { articlesItemList?.add(it) }
 
                         if (articlesItemList != null && !articlesItemList.isEmpty()) {

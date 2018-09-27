@@ -16,11 +16,14 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.view
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
+import com.rohitss.aac.R
+import com.rohitss.aac.data.ArticlesItem
+import com.rohitss.aac.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 
 class ArticlesListAdapter(private val arrNewsUpdates: List<ArticlesItem>, private val listener: (Int) -> Unit) : RecyclerView.Adapter<ArticlesListAdapter.MyViewHolder>() {

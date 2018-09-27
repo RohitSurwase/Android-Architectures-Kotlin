@@ -16,18 +16,26 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.data
 
-import android.app.Application
+import android.arch.lifecycle.LiveData
+import android.arch.persistence.room.Dao
+import android.arch.persistence.room.Insert
+import android.arch.persistence.room.OnConflictStrategy
+import android.arch.persistence.room.Query
 
 /**
- * Created by Rohit Surwase on 26/09/18.
+ * Created by Rohit Surwase on 07/08/18.
  */
-class MyApp : Application() {
 
-    private fun getDatabase() = AppDatabase.getInstance(this)
+@Dao
+interface ArticlesDAO {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(articlesItem: List<ArticlesItem>)
 
-    private fun getArticlesDao() = getDatabase().getArticlesDAO()
+    @Query("DELETE FROM articles_table")
+    fun deleteAll()
 
-    fun getArticlesRepository() = ArticlesRepository.getInstance(getArticlesDao())
+    @Query("SELECT * from articles_table")
+    fun getAll(): LiveData<List<ArticlesItem>>
 }

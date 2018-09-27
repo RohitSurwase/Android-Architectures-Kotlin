@@ -16,13 +16,16 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.view
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import com.rohitss.aac.R
+import com.rohitss.aac.data.AppDatabase
+import com.rohitss.aac.repository.ArticlesRepository
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 
@@ -33,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val factory: ArticlesViewModel.Factory = ArticlesViewModel.Factory((application as MyApp).getArticlesRepository())
+        val factory: ArticlesViewModel.Factory = ArticlesViewModel.Factory(ArticlesRepository.getInstance(AppDatabase.getInstance(this).getArticlesDAO()))
         articlesViewModel = ViewModelProviders.of(this, factory).get(ArticlesViewModel::class.java)
 
         mainRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -41,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         articlesViewModel.getAll().observe(this, Observer { articles ->
             if (articles != null) {
                 val adapter = ArticlesListAdapter(articles) { adapterPosition ->
-                    toast("Item Clicked: $adapterPosition")
+                    toast(articles[adapterPosition].title)
                 }
                 mainRecyclerView.adapter = adapter
             }

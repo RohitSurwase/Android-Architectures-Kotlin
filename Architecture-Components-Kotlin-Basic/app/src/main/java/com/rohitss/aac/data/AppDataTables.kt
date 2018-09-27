@@ -16,7 +16,7 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.data
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.Index

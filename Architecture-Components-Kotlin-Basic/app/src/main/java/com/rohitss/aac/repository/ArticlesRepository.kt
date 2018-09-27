@@ -16,7 +16,7 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.repository
 
 import android.text.TextUtils
 import android.util.Log
@@ -24,6 +24,10 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
+import com.rohitss.aac.BuildConfig
+import com.rohitss.aac.data.ArticlesDAO
+import com.rohitss.aac.data.ArticlesItem
+import com.rohitss.aac.data.NewsResponseNullable
 import org.jetbrains.anko.doAsync
 
 /**
@@ -38,7 +42,8 @@ class ArticlesRepository private constructor(private val articlesDAO: ArticlesDA
 
         fun getInstance(databaseDAO: ArticlesDAO): ArticlesRepository = instance
                 ?: synchronized(this) {
-                    instance ?: ArticlesRepository(databaseDAO).also { instance = it }
+                    instance
+                            ?: ArticlesRepository(databaseDAO).also { instance = it }
                 }
     }
 

@@ -16,10 +16,12 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.view
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import com.rohitss.aac.data.ArticlesItem
+import com.rohitss.aac.repository.ArticlesRepository
 
 /**
  * Created by Rohit Surwase on 29/08/18.

@@ -16,7 +16,7 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.data
 
 /**
  * Created by Rohit Surwase on 07/08/18.

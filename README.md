@@ -4,7 +4,7 @@ This repo is the part of the article series: [Android App Architectures in Kotli
 
 These are the simple examples showing the implementation of few popular architecture patterns using Kotlin.
 
-#### Note: This repository is has multiple individual apps. So, you need to open each app separately in Android Studio. If you try to open the whole repository in Android Studio it will not compile. Please open each example separately in Android Studio.
+#### Note: This repository has multiple individual apps. So, you need to open each app separately in Android Studio. If you try to open the whole repository in Android Studio it will not compile. Please open each example separately in Android Studio.
 
 #### Examples:
 

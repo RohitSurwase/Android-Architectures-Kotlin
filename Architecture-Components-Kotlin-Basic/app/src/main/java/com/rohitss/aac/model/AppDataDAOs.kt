@@ -16,22 +16,26 @@
  *
  */
 
-package com.rohitss.aac
+package com.rohitss.aac.model
 
-import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
+import android.arch.lifecycle.LiveData
+import android.arch.persistence.room.Dao
+import android.arch.persistence.room.Insert
+import android.arch.persistence.room.OnConflictStrategy
+import android.arch.persistence.room.Query
 
 /**
- * Created by Rohit Surwase on 31/08/18.
+ * Created by Rohit Surwase on 07/08/18.
  */
 
-fun inflate(context: Context, viewId: Int, parent: ViewGroup? = null, attachToRoot: Boolean = false): View {
-    return LayoutInflater.from(context).inflate(viewId, parent, attachToRoot)
-}
+@Dao
+interface ArticlesDAO {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(articlesItem: List<ArticlesItem>)
 
-fun showToast(context: Context, strError: String, length: Int = Toast.LENGTH_SHORT) {
-    Toast.makeText(context, strError, length).show()
+    @Query("DELETE FROM articles_table")
+    fun deleteAll()
+
+    @Query("SELECT * from articles_table")
+    fun getAll(): LiveData<List<ArticlesItem>>
 }

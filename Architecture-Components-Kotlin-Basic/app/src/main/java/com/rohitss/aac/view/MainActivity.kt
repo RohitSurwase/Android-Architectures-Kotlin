@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2017 Rohit Sahebrao Surwase.
+ *  * Copyright (C) 2017-19 Rohit Sahebrao Surwase.
  *  *
  *  *    Licensed under the Apache License, Version 2.0 (the "License");
  *  *    you may not use this file except in compliance with the License.
@@ -24,8 +24,9 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import com.rohitss.aac.R
-import com.rohitss.aac.data.AppDatabase
+import com.rohitss.aac.model.AppDatabase
 import com.rohitss.aac.repository.ArticlesRepository
+import com.rohitss.aac.viewmodel.ArticlesViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity() {
                     toast(articles[adapterPosition].title)
                 }
                 mainRecyclerView.adapter = adapter
+            } else {
+                toast("No results")
             }
         })
 

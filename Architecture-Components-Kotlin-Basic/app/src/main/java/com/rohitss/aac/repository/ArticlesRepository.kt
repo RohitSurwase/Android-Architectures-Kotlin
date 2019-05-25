@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2017 Rohit Sahebrao Surwase.
+ *  * Copyright (C) 2017-19 Rohit Sahebrao Surwase.
  *  *
  *  *    Licensed under the Apache License, Version 2.0 (the "License");
  *  *    you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.ParsedRequestListener
 import com.rohitss.aac.BuildConfig
-import com.rohitss.aac.data.ArticlesDAO
-import com.rohitss.aac.data.ArticlesItem
-import com.rohitss.aac.data.NewsResponseNullable
+import com.rohitss.aac.model.ArticlesDAO
+import com.rohitss.aac.model.ArticlesItem
+import com.rohitss.aac.model.NewsResponseNullable
 import org.jetbrains.anko.doAsync
 
 /**

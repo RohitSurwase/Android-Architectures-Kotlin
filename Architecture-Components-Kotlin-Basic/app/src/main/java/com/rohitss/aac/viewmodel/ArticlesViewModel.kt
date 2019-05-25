@@ -16,11 +16,11 @@
  *
  */
 
-package com.rohitss.aac.view
+package com.rohitss.aac.viewmodel
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.rohitss.aac.data.ArticlesItem
+import com.rohitss.aac.model.ArticlesItem
 import com.rohitss.aac.repository.ArticlesRepository
 
 /**

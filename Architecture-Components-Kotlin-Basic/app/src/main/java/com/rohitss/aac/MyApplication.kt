@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2017 Rohit Sahebrao Surwase.
+ *  * Copyright (C) 2017-19 Rohit Sahebrao Surwase.
  *  *
  *  *    Licensed under the Apache License, Version 2.0 (the "License");
  *  *    you may not use this file except in compliance with the License.
@@ -16,20 +16,14 @@
  *
  */
 
-package com.rohitss.aac.data
+package com.rohitss.aac
 
-import android.arch.persistence.room.Entity
-import android.arch.persistence.room.Index
-import android.arch.persistence.room.PrimaryKey
-import android.support.annotation.NonNull
+import android.app.Application
+import com.androidnetworking.AndroidNetworking
 
-/**
- * Created by Rohit Surwase on 07/08/18.
- */
-@Entity(tableName = "articles_table", indices = [Index("title", unique = true)])
-data class ArticlesItem(
-        @PrimaryKey(autoGenerate = true) @NonNull var id: Int,
-        var author: String,
-        var description: String,
-        var title: String
-)
+class MyApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        AndroidNetworking.initialize(applicationContext)
+    }
+}

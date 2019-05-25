@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2017 Rohit Sahebrao Surwase.
+ *  * Copyright (C) 2017-19 Rohit Sahebrao Surwase.
  *  *
  *  *    Licensed under the Apache License, Version 2.0 (the "License");
  *  *    you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.rohitss.aac.R
-import com.rohitss.aac.data.ArticlesItem
+import com.rohitss.aac.model.ArticlesItem
 import com.rohitss.aac.inflate
 import kotlinx.android.synthetic.main.item_view.view.*
 

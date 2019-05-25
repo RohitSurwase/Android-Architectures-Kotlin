@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2017 Rohit Sahebrao Surwase.
+ *  * Copyright (C) 2017-19 Rohit Sahebrao Surwase.
  *  *
  *  *    Licensed under the Apache License, Version 2.0 (the "License");
  *  *    you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
  *
  */
 
-package com.rohitss.aac.data
+package com.rohitss.aac.model
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
@@ -38,7 +38,7 @@ abstract class AppDatabase : RoomDatabase() {
         fun getInstance(context: Context): AppDatabase {
             return instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(context.applicationContext,
-                        AppDatabase::class.java, "my_database.db").fallbackToDestructiveMigration().build().also { instance = it }
+                        AppDatabase::class.java, "my_database.db").build().also { instance = it }
             }
         }
     }

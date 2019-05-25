@@ -1,6 +1,6 @@
 /*
  *
- *  * Copyright (C) 2017 Rohit Sahebrao Surwase.
+ *  * Copyright (C) 2017-19 Rohit Sahebrao Surwase.
  *  *
  *  *    Licensed under the Apache License, Version 2.0 (the "License");
  *  *    you may not use this file except in compliance with the License.
@@ -16,26 +16,17 @@
  *
  */
 
-package com.rohitss.aac.data
-
-import android.arch.lifecycle.LiveData
-import android.arch.persistence.room.Dao
-import android.arch.persistence.room.Insert
-import android.arch.persistence.room.OnConflictStrategy
-import android.arch.persistence.room.Query
+package com.rohitss.aac.model
 
 /**
  * Created by Rohit Surwase on 07/08/18.
  */
+data class NewsResponseNullable(
+        val articles: List<ArticlesItemNullable?>? = null
+)
 
-@Dao
-interface ArticlesDAO {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(articlesItem: List<ArticlesItem>)
-
-    @Query("DELETE FROM articles_table")
-    fun deleteAll()
-
-    @Query("SELECT * from articles_table")
-    fun getAll(): LiveData<List<ArticlesItem>>
-}
+data class ArticlesItemNullable(
+        val author: String? = null,
+        val description: String? = null,
+        val title: String? = null
+)

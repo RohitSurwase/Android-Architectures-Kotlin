@@ -37,6 +37,10 @@ class NewsHomeInteractor {
     }
 
     fun requestNewsDataAPI(onFinishedListener: OnFinishedListener) {
+        //NewsKotlinMvpApiKey is personal ApiKey required for web-service used in this project
+        // and I got it after registering at https://newsapi.org and is stored locally.
+        //You need to get your own ApiKey by registering at https://newsapi.org/register
+        //It is a free service for individual and I do not relate with it in any way.
         AndroidNetworking.get("https://newsapi.org/v2/top-headlines?sources=bbc-news")
                 .addHeaders("X-Api-Key", BuildConfig.NewsKotlinMvpApiKey)
                 .setTag(TAG)
